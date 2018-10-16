@@ -22,6 +22,16 @@ $arrayJson = json_decode($content, true);
       $arrayPostData['messages'][0]['type'] = "text";
       $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
       pushMsg($arrayHeader,$arrayPostData);
+   } else if($message == "เธอเป็นใคร"){
+      $arrayPostData['to'] = $id;
+      $arrayPostData['messages'][0]['type'] = "text";
+      $arrayPostData['messages'][0]['text'] = "เราคือบอท";
+      pushMsg($arrayHeader,$arrayPostData);
+   } else if($message == "บอทอะไร"){
+      $arrayPostData['to'] = $id;
+      $arrayPostData['messages'][0]['type'] = "text";
+      $arrayPostData['messages'][0]['text'] = "บอทเช็คชื่อจ้าา";
+      pushMsg($arrayHeader,$arrayPostData);
    }
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
