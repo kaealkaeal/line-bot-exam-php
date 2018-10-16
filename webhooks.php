@@ -32,6 +32,11 @@ $arrayJson = json_decode($content, true);
       $arrayPostData['messages'][0]['type'] = "text";
       $arrayPostData['messages'][0]['text'] = "บอทเช็คชื่อจ้าา";
       pushMsg($arrayHeader,$arrayPostData);
+   } else{
+      $arrayPostData['to'] = $id;
+      $arrayPostData['messages'][0]['type'] = "text";
+      $arrayPostData['messages'][0]['text'] = "เราไม่เข้าใจ";
+      pushMsg($arrayHeader,$arrayPostData);
    }
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
